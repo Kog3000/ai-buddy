@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Наставник{% endblock %}
+{% block heading %}Наставник{% endblock %}
+{% from "_meet_row.html" import meet_row %}
+{% block content %}
+{% if mentor %}
+<section class="mentor-card mentor-hero">
+  <div class="m-avatar"></div>
+  <div class="info"><h3>{{ mentor.full_name }}</h3><div class="sub">{{ mentor.team }}</div></div>
+</section>
+{% endif %}
+
+<div class="section-head big" id="schedule">
+  <h2 class="section-title">Ближайшие встречи</h2>
+  <button class="btn outline" data-open="#meet-modal">Запланировать встречу</button>
+</div>
+{% for m in meetings %}
+{{ meet_row(m) }}
+{% else %}
+<div class="empty">Встреч пока нет — запланируй 1:1.</div>
+{% endfor %}
+
+<div class="section-head big">
+  <h2 class="section-title">Заметки после встреч</h2>
+  <button class="btn outline" data-note-new>Добавить</button>
+</div>
+<div id="notes">
+{% for n in notes %}
+<div class="note" data-note="{{ n.id }}">
+  <h4>{{ n.title }}</h4><p>{{ n.body }}</p>
+  <button class="edit" data-note-edit aria-label="Редактировать">{{ icon('pencil', 24) }}</button>
+</div>
+{% else %}
+<div class="empty">Заметок пока нет.</div>
+{% endfor %}
+</div>
+
+{% if questions %}
+<div class="section-head big"><h2 class="section-title">Мои вопросы наставнику</h2></div>
+{% for q in questions %}
+<div class="q-card">
+  <span class="chip {{ 'granted' if q.status == 'answered' else 'pending_approval' }}">{{ 'Ответ получен' if q.status == 'answered' else 'Ждёт ответа' }}</span>
+  <div class="q">{{ q.question }}</div>
+  {% if q.answer %}<div>{{ q.answer }}</div>{% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+{% include "_meet_modal.html" %}
+
+<div class="modal-bg" id="note-modal">
+  <form class="modal" id="note-form">
+    <h3 id="note-modal-title">Заметка</h3>
+    <input type="hidden" name="note_id">
+    <div class="field"><label>Встреча</label><input type="text" name="title" required></div>
+    <div class="field"><label>О чём договорились</label><textarea name="body" rows="5"></textarea></div>
+    <div class="actions">
+      <button type="button" class="btn secondary push-left" data-note-delete>Удалить</button>
+      <button type="button" class="btn secondary" data-close>Отмена</button><button class="btn primary" type="submit">Сохранить</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

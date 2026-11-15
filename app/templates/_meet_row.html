@@ -1,0 +1,13 @@
+{% macro meet_row(m) %}
+<div class="meet-row {{ m.status }}" data-meeting="{{ m.id }}">
+  <span class="t">{{ m.label }}<span class="muted small">{{ m.title }}{% if m.agenda %} · {{ m.agenda }}{% endif %}</span></span>
+  <span class="w">{{ m.when }}</span>
+  <span class="chip {{ 'granted' if m.status == 'accepted' else 'pending_approval' }}">{{ m.status_label }}</span>
+  {% if m.status == 'pending' and m.to_me %}
+    <button class="btn xs primary" data-meet-decide="1">Подтвердить</button>
+    <button class="btn xs secondary" data-meet-decide="0">Не смогу</button>
+  {% elif m.status == 'pending' and m.mine %}
+    <button class="btn xs secondary" data-meeting-cancel>Отозвать</button>
+  {% endif %}
+</div>
+{% endmacro %}

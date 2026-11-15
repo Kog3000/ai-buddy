@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Подборки статей{% endblock %}
+{% block heading %}Подборки статей{% endblock %}
+{% block content %}
+<p class="page-lead">Шаблоны материалов по направлениям. Наставник выдаёт подборку своему стажёру целиком одной кнопкой и может добавить свои ссылки — например, статьи с Хабра.</p>
+<div class="section-head first">
+  <h2 class="section-title">Направления · {{ templates|length }}</h2>
+  <form class="tpl-new" id="tpl-form"><input class="input" name="title" placeholder="Новое направление, например «QA-инженер»" required><button class="btn sm primary">Создать</button></form>
+</div>
+{% for t in templates %}
+<section class="tpl card-plain" data-template="{{ t.id }}">
+  <h3>{{ t.title }}</h3>{% if t.description %}<p class="muted small">{{ t.description }}</p>{% endif %}
+  {% for a in t.articles %}
+  <div class="mat-row" data-article="{{ a.id }}">
+    <span class="tag">{{ a.category }}</span>
+    <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+    <span class="muted small">{{ a.minutes }} мин</span>
+    <button class="btn xs secondary" data-remove-article>Убрать</button>
+  </div>
+  {% else %}<div class="empty">В подборке пока нет статей.</div>{% endfor %}
+  <form class="mat-form" data-add-article>
+    <select class="input" name="category">{% for c in categories %}<option>{{ c }}</option>{% endfor %}</select>
+    <input class="input" name="title" placeholder="Название статьи" required>
+    <input class="input" name="url" type="url" placeholder="https://habr.com/…" required>
+    <button class="btn sm outline">Добавить</button>
+  </form>
+</section>
+{% endfor %}
+{% endblock %}

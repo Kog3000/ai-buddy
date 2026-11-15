@@ -1,0 +1,22 @@
+{# Окно «Запланировать встречу»: календарь общих свободных окон. interns — список для наставника. #}
+<div class="modal-bg" id="meet-modal">
+  <form class="modal wide" id="meet-form">
+    {% if interns is defined %}
+    <h3>Назначить встречу стажёру</h3>
+    <div class="field"><label>Стажёр</label>
+      <select name="intern_id" id="meet-intern">{% for i in interns %}<option value="{{ i.id }}">{{ i.full_name }}</option>{% endfor %}</select></div>
+    <p class="muted small">В календаре отмечены дни, когда свободны и ты, и стажёр. Стажёр получит приглашение и подтвердит время.</p>
+    {% else %}
+    <h3>Запланировать встречу с наставником</h3>
+    <p class="muted small">В календаре отмечены дни, когда свободны и ты, и {{ mentor.full_name if mentor else 'наставник' }}. Наставник получит приглашение и подтвердит время.</p>
+    {% endif %}
+    <div class="cal" id="cal">
+      <div class="cal-head"><button type="button" class="icon-btn" id="cal-prev" aria-label="Предыдущая неделя">{{ icon('chev-left', 20) }}</button><span id="cal-title">Загружаю календарь…</span><button type="button" class="icon-btn" id="cal-next" aria-label="Следующая неделя">{{ icon('chev-right', 20) }}</button></div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+    <div class="field"><label id="slots-label">Выбери день</label><div class="slot-grid" id="slots"></div></div>
+    <div class="field"><label>Тема</label><input type="text" name="title" value="{{ 'Встреча 1:1' if interns is defined else 'Встреча 1:1 с наставником' }}"></div>
+    <div class="field"><label>Повестка</label><textarea name="agenda" placeholder="Что хочешь обсудить?"></textarea></div>
+    <div class="actions"><button type="button" class="btn secondary" data-close>Отмена</button><button class="btn primary" type="submit">{{ 'Отправить приглашение' if interns is defined else 'Запланировать' }}</button></div>
+  </form>
+</div>

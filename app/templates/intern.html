@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}{{ intern.full_name }}{% endblock %}
+{% block heading %}{{ intern.full_name }}{% endblock %}
+{% set is_mentor = me.id == intern.mentor_id %}
+{% block content %}
+<div class="intern-top">
+  <div class="crumbs"><a href="/team">Мои стажёры</a> / {{ intern.full_name }} · {{ data.done }} из {{ data.total }} задач ({{ data.percent }}%)</div>
+  <a class="btn sm outline" href="/team/intern/{{ intern.id }}/report">Итоговый отчёт</a>
+</div>
+<div class="bar"><span style="width: {{ data.percent }}%"></span></div>
+
+{% set waiting = [] %}
+{% for w in data.weeks %}{% for t in w.tasks if t.waiting %}{% set _ = waiting.append(t) %}{% endfor %}{% endfor %}
+{% if waiting %}
+<div class="section-head"><h2 class="section-title">Ждут подтверждения{% if is_mentor %} — отметь, если задача выполнена{% endif %}</h2></div>
+{% for t in waiting %}
+<div class="task review-task" {% if is_mentor %}data-mentor-task="{{ t.id }}" data-intern="{{ intern.id }}"{% endif %}>
+  {% if is_mentor %}<button class="cbox" type="button" aria-label="Подтвердить «{{ t.title }}»"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></button>{% endif %}
+  <span class="t-title">{{ t.title }}<span class="t-desc">{{ intern.first_name }} просит подтвердить выполнение</span></span>
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="section-head"><h2 class="section-title">Чек-лист</h2>{% if is_mentor %}<span class="muted small">Задачи с пометкой «наставник» отмечаешь только ты; остальные можно поправить при необходимости.</span>{% endif %}</div>
+{% for w in data.weeks %}
+<div class="week {{ 'open' if w.week == data.current_week }}">
+  <button class="week-head" type="button">{{ icon('chev-down', 14) }}<span>{{ w.period }}. {{ w.title }}</span><span class="cnt">{{ w.done }} из {{ w.total }}</span></button>
+  <div class="week-body">
+    {% for t in w.tasks %}
+    <div class="task {{ 'done' if t.done }}" {% if is_mentor %}data-mentor-task="{{ t.id }}" data-intern="{{ intern.id }}"{% endif %}>
+      {% if is_mentor %}<button class="cbox" type="button" aria-label="Отметить «{{ t.title }}»">{% else %}<span class="cbox">{% endif %}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>{% if is_mentor %}</button>{% else %}</span>{% endif %}
+      <span class="t-title">{{ t.title }}</span>
+      {% if t.by_mentor %}<span class="auto">наставник</span>{% endif %}
+      {% if t.waiting %}<span class="auto wait">ждёт подтверждения</span>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+
+<div class="section-head" id="materials">
+  <h2 class="section-title">Материалы от наставника</h2>
+</div>
+{% if is_mentor %}
+<div class="mat-tools">
+  <form class="mat-form" id="tpl-assign" data-intern="{{ intern.id }}">
+    <select class="input" name="template_id">{% for t in templates %}<option value="{{ t.id }}">{{ t.title }} · {{ t.articles|length }} статей</option>{% endfor %}</select>
+    <button class="btn sm primary">Выдать подборку</button>
+  </form>
+  <form class="mat-form" id="article-assign" data-intern="{{ intern.id }}">
+    <select class="input" name="category">{% for c in categories %}<option>{{ c }}</option>{% endfor %}</select>
+    <input class="input" name="title" placeholder="Название статьи" required>
+    <input class="input" name="url" type="url" placeholder="Ссылка, например https://habr.com/…" required>
+    <button class="btn sm outline">Добавить статью</button>
+  </form>
+</div>
+{% endif %}
+{% for g in materials %}
+<div class="mat-cat">{{ g.category }} <span class="muted small">{{ g.done }} из {{ g.entries|length }} прочитано</span></div>
+{% for m in g.entries %}
+<div class="mat-row {{ 'done' if m.done }}" data-material="{{ m.id }}">
+  <span class="dot"></span><a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a><span class="muted small">{{ m.host }}</span>
+  {% if is_mentor %}<button class="btn xs secondary" data-material-remove>Убрать</button>{% endif %}
+</div>
+{% endfor %}
+{% else %}<div class="empty">Материалов пока нет{% if is_mentor %} — выдай подборку по направлению или добавь статью{% endif %}.</div>{% endfor %}
+
+{% if goals %}
+<div class="section-head"><h2 class="section-title">Цели</h2></div>
+{% for g in goals %}
+<div class="goal-row {{ 'done' if g.status == 'done' }}"><div class="g-t">{{ g.title }}<div class="g-m">{{ g.kind_label }}{% if g.metric %} · Готово, когда: {{ g.metric }}{% endif %}{% if g.due %} · до {{ g.due }}{% endif %}</div></div>
+  <span class="chip {{ 'granted' if g.agreed else 'pending_approval' }}">{{ 'Согласована' if g.agreed else 'Ждёт руководителя' }}</span></div>
+{% endfor %}
+{% endif %}
+{% endblock %}

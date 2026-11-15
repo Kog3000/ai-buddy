@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Отчёт: {{ intern.full_name }}{% endblock %}
+{% block heading %}Итоговый отчёт{% endblock %}
+{% set i = r.intern %}
+{% block content %}
+<div class="intern-top no-print">
+  <div class="crumbs">{% if me.role != 'admin' %}<a href="/team">Мои стажёры</a> / <a href="/team/intern/{{ i.id }}">{{ i.name }}</a> / {% endif %}Итоговый отчёт</div>
+  <button class="btn sm secondary" onclick="window.print()">Печать / PDF</button>
+</div>
+
+<section class="report-head card-lav">
+  <h2>{{ i.name }}</h2>
+  <div class="rep-grid">
+    <span>Позиция</span><span>{{ i.position or '—' }}</span>
+    <span>Команда</span><span>{{ i.team }}</span>
+    <span>Стажировка</span><span>{{ i.start }} — {{ i.end }} · {{ i.days }} дн.</span>
+    <span>Наставник</span><span>{{ i.mentor }}</span>
+    <span>Руководитель</span><span>{{ i.lead }}</span>
+  </div>
+</section>
+
+<div class="tiles rep-tiles">
+  <div class="tile g"><div class="v">{{ r.checklist.percent }}%</div><div class="l">плана адаптации ({{ r.checklist.done }} из {{ r.checklist.total }} задач)</div></div>
+  <div class="tile"><div class="v">{{ r.goals_done }} из {{ r.goals|length }}</div><div class="l">целей достигнуто</div></div>
+  <div class="tile"><div class="v">{{ r.kb.done }} / {{ r.materials.done }}</div><div class="l">материалов базы знаний / статей от наставника изучено</div></div>
+  <div class="tile"><div class="v">{{ r.meetings }}</div><div class="l">встреч 1:1 с наставником</div></div>
+</div>
+
+<div class="grid2 rep-cols">
+  <div>
+    <div class="section-head"><h2 class="section-title">Этапы адаптации</h2></div>
+    {% for s in r.checklist.stages %}
+    <div class="rep-stage"><span>{{ s.title }}</span><span class="muted">{{ s.done }} из {{ s.total }}</span></div>
+    <div class="bar thin"><span style="width: {{ (s.done * 100 / s.total) if s.total else 0 }}%"></span></div>
+    {% endfor %}
+    <div class="section-head"><h2 class="section-title">Цели</h2></div>
+    {% for g in r.goals %}<div class="goal-line">{{ '✅' if g.status == 'done' else '⏳' }} {{ g.title }}{% if g.metric %} <span class="muted small">· {{ g.metric }}</span>{% endif %}</div>
+    {% else %}<div class="empty">Цели не заведены.</div>{% endfor %}
+  </div>
+  <div>
+    <div class="section-head"><h2 class="section-title">Вопросы</h2></div>
+    <p>AI-buddy: <b>{{ r.questions_to_bot }}</b> сообщений · наставнику передано: <b>{{ r.questions_to_mentor }}</b></p>
+    {% for t in r.question_topics %}<div class="goal-line">{{ t.label }} — {{ t.count }}</div>{% endfor %}
+    <div class="section-head"><h2 class="section-title">Анкета стажёра</h2></div>
+    {% if r.feedback %}
+      {% for key, q in questions.items() %}<div class="goal-line">{{ q }} — <b>{{ r.feedback[key] }}/5</b></div>{% endfor %}
+      {% if r.feedback.hardest %}<p><b>Сложнее всего:</b> {{ r.feedback.hardest }}</p>{% endif %}
+      {% if r.feedback.improve %}<p><b>Что улучшить:</b> {{ r.feedback.improve }}</p>{% endif %}
+    {% else %}<div class="empty">Стажёр ещё не заполнил анкету (задача последнего этапа чек-листа).</div>{% endif %}
+  </div>
+</div>
+
+<div class="section-head">
+  <h2 class="section-title">Письмо-характеристика</h2>
+  <span class="muted small" id="letter-status">{% if r.saved %}Сохранено {{ r.updated }}{% else %}Черновик собран из данных стажировки — дополни и сохрани{% endif %}</span>
+</div>
+{% if me.id == intern.mentor_id %}
+<form id="letter-form" data-intern="{{ i.id }}">
+  <textarea class="letter" name="letter" rows="22">{{ r.letter }}</textarea>
+  <div class="decide-row no-print">
+    <button class="btn sm primary" type="submit">Сохранить</button>
+    <button class="btn sm secondary" type="button" data-copy-letter>Скопировать</button>
+    <button class="btn sm secondary" type="button" data-reset-letter>Собрать заново</button>
+  </div>
+</form>
+{% else %}
+<pre class="letter">{{ r.letter }}</pre>
+{% endif %}
+{% endblock %}
