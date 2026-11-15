@@ -22,6 +22,7 @@ from ..services import absence as absence_svc
 from ..services import access as access_svc
 from ..textutil import fmt_range, workdays_between
 from . import llm, nlu
+from .learning import LEARNING_FLOWS, LEARNING_SUGGESTIONS, LearningMixin
 from .prompts import SYSTEM_PROMPT, build_context, build_materials
 
 log = logging.getLogger(__name__)
@@ -61,7 +62,7 @@ def _cancel_action() -> dict:
     return {"label": "Отмена", "action": "cancel", "params": {}, "style": "secondary"}
 
 
-class Agent:
+class Agent(LearningMixin):
     def __init__(self, user: User):
         self.user = user
         self.mcp = MCPClient(user)
@@ -73,6 +74,9 @@ class Agent:
         if attachments and not text.strip():
             return self._on_file_only(attachments)
         intent = nlu.detect(text, state, staff=self.user.role in {"mentor", "lead"})
+        if state.get("flow") in LEARNING_FLOWS and intent.name not in LEARNING_FLOWS:
+            _set_state(self.user, None)
+            state = {}
         handler = getattr(self, f"_on_{intent.name}")
         try:
             reply = handler(text, intent.slots, state)
@@ -113,10 +117,10 @@ class Agent:
                          f"для наставников.", suggestions=STAFF_SUGGESTIONS)
         return Reply(f"Привет, {self.user.first_name}! Я AI-buddy. Помогу найти материалы, оформить заявки "
                      f"и подскажу следующий шаг адаптации.",
-                     suggestions=["Что дальше?", "Где хранятся документы нашей команды?", "Нужен доступ к Stash"])
+                     suggestions=LEARNING_SUGGESTIONS)
 
     def _on_thanks(self, text, slots, state) -> Reply:
-        return Reply("Обращайся! Если что-то понадобится — я здесь.", suggestions=["Что дальше?"])
+        return Reply("Обращайся! Если что-то понадобится — я здесь.", suggestions=LEARNING_SUGGESTIONS)
 
     def _on_cancel(self, text, slots, state) -> Reply:
         _set_state(self.user, None)
@@ -293,6 +297,7 @@ class Agent:
         if params.get("attachment_id"):
             args["attachment_id"] = int(params["attachment_id"])
         result = self.mcp.call("mentor_ask", **args)
+        _set_state(self.user, None)
         return Reply(f"Передал вопрос наставнику ({result['mentor']}). Пришлю ответ сюда, как только он появится.",
                      suggestions=["Что дальше?"], meta={"source": "escalated"})
 

@@ -565,6 +565,10 @@ svg {
 .video-platforms { display: flex; flex-wrap: wrap; gap: 10px; }
 .video-platforms .btn { white-space: normal; }
 .video-navigation { margin-top: 20px; }
+.chat-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.main:has(.chat-shortcuts) { display: flex; flex-direction: column; height: 100dvh; min-height: 0; }
+.main:has(.chat-shortcuts) .topbar, .chat-shortcuts { flex-shrink: 0; }
+.main:has(.chat-shortcuts) .chat-wrap { flex: 1; min-height: 0; height: auto; }
 
 .toast {
   position: fixed;

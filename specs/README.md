@@ -16,5 +16,6 @@
 | [scenarios/05-adaptation-progress.md](scenarios/05-adaptation-progress.md) | Этапы адаптации, статусы, следующие шаги, трекер целей | `test_checklist_*`, `test_goal_flow`, `test_cron_*` |
 | [scenarios/06-curator-access-chats.md](scenarios/06-curator-access-chats.md) | Кабинеты от куратора, доступы, каналы, вложения, уведомления | `tests/test_new_features.py` |
 | [scenarios/07-mentor-tools.md](scenarios/07-mentor-tools.md) | Встречи от наставника, задачи с подтверждением, база ответов, материалы, отчёт, анкета | `tests/test_round3.py` |
+| [scenarios/08-learning-chat.md](scenarios/08-learning-chat.md) | Поиск материалов, три вопроса самопроверки, помощь при затруднениях | `tests/test_learning_chat.py` |
 
 Изменение поведения агента = сначала правка спецификации, затем теста, затем кода.

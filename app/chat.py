@@ -37,8 +37,9 @@ def history(user: User, after_id: int = 0, limit: int = 60) -> list[dict]:
             from .agent.agent import STAFF_SUGGESTIONS
             text, suggestions = WELCOME_STAFF.format(name=user.first_name), STAFF_SUGGESTIONS
         else:
+            from .agent.learning import LEARNING_SUGGESTIONS
             text = WELCOME.format(name=user.first_name)
-            suggestions = ["Что дальше?", "Где хранятся документы нашей команды?", "Как оформить отгул?"]
+            suggestions = LEARNING_SUGGESTIONS
         db.session.add(ChatMessage(user_id=user.id, role="assistant", text=text, payload={"suggestions": suggestions}))
         db.session.commit()
     query = ChatMessage.query.filter(ChatMessage.user_id == user.id, ChatMessage.id > after_id)
