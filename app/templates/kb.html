@@ -7,6 +7,14 @@
   <input id="kb-search" placeholder="Поиск по разделам и темам: например, «отпуск», «Git», «код-ревью»" aria-label="Поиск по базе знаний" autocomplete="off">
   <div class="search-results" id="kb-results"></div>
 </div>
+{% if frontend %}
+<section class="card-lav" aria-labelledby="frontend-title">
+  <div class="section-head first"><h2 class="section-title" id="frontend-title">{{ me.first_name }}, твоя фронтенд-подборка</h2><span class="muted small">{{ frontend.done }} из {{ frontend.total }} изучено</span></div>
+  <p>JavaScript → качество кода → материалы GitHub. Начни с нужного модуля или проходи по порядку.</p>
+  <p class="muted small">Программы курсов AvitoTech, ссылки на оригиналы и вопросы для самопроверки. Без обязательных сроков.</p>
+  <a class="btn primary" href="/kb/{{ frontend.category }}">Открыть подборку</a>
+</section>
+{% endif %}
 {% if materials %}
 <section class="materials card-blue" id="materials">
   <div class="section-head first"><h2 class="section-title">Материалы от наставника</h2>{% if mentor %}<span class="muted small">подобрал(а) {{ mentor.full_name }}</span>{% endif %}</div>
@@ -26,7 +34,7 @@
   {% for c in categories %}
   <a class="kb-card" href="/kb/{{ c.slug }}">
     <h3>{{ c.title }}</h3>
-    <div class="meta">{{ c.count }} {{ c.count|plural("тема","темы","тем") }} ~ {{ c.hours }} {{ c.hours|plural("час","часа","часов") }}</div>
+    <div class="meta">{{ c.count }} {{ c.count|plural("тема","темы","тем") }}{% if c.slug == 'frontend' %} · видео и материалы{% else %} ~ {{ c.hours }} {{ c.hours|plural("час","часа","часов") }}{% endif %}</div>
     <div class="pb"><span style="width: {{ c.percent }}%"></span></div>
   </a>
   {% endfor %}
@@ -39,5 +47,5 @@
   </div>
   <a class="btn primary" href="/chat">Задать вопрос</a>
 </section>
-<p class="disclaimer">Материалы прототипа тестовые и не являются регламентами Авито.</p>
+<p class="disclaimer">Фронтенд-подборка ведёт к публичным материалам AvitoTech. Остальные инструкции прототипа тестовые и не являются регламентами Авито.</p>
 {% endblock %}

@@ -2,6 +2,13 @@
 {% block title %}Чат{% endblock %}
 {% block heading %}Чат с AI-buddy{% endblock %}
 {% block content %}
+{% if me.role == 'intern' %}
+<div class="chat-shortcuts" aria-label="Быстрые запросы AI-buddy">
+  {% for prompt in ['Что дальше?', 'Найди материал по теме', 'Проверь мои знания', 'Я застрял'] %}
+  <button class="btn xs light" type="button" data-chat-prompt="{{ prompt }}">{{ prompt }}</button>
+  {% endfor %}
+</div>
+{% endif %}
 <div class="chat-wrap">
   <div class="chat-log" id="chat-log" aria-live="polite"></div>
   <div class="attach-chip" id="attach-chip" hidden><span>{{ icon('file', 18) }}<b id="attach-name"></b><span class="muted" id="attach-size"></span></span><button type="button" id="attach-clear" aria-label="Убрать файл">{{ icon('close', 16) }}</button></div>

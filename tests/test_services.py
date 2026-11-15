@@ -39,8 +39,8 @@ def test_kb_team_scoped_topics(arina):
 
 def test_kb_categories_progress(arina):
     cats = kb.categories(arina)
-    assert len(cats) == 12 and sum(c["count"] for c in cats) == 84
-    assert kb.progress(arina) == {"done": 2, "total": 84, "percent": 2.4}
+    assert len(cats) == 13 and sum(c["count"] for c in cats) == 96
+    assert kb.progress(arina) == {"done": 2, "total": 96, "percent": 2.1}
     kb.mark_done(arina, "team-structure")
     kb.mark_done(arina, "team-structure")  # идемпотентно
     assert kb.progress(arina)["done"] == 3

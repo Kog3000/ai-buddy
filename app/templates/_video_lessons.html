@@ -1,0 +1,13 @@
+<div class="video-lessons">
+{% for video in videos %}
+  <article class="video-lesson card-lav" id="{{ video.id }}">
+    <h3>{{ video.number }}. {{ video.title }}</h3>
+    <p>{{ video.description }}</p>
+    <div class="video-platforms" aria-label="Смотреть: {{ video.title }}">
+      {% for platform in video.platforms %}
+      <a class="btn light" href="{{ platform.url }}" target="_blank" rel="noopener noreferrer">{{ platform.name }} ↗</a>
+      {% endfor %}
+    </div>
+  </article>
+{% endfor %}
+</div>

@@ -13,6 +13,10 @@
   let pending = false;
   let messages = [];
 
+  document.querySelectorAll("[data-chat-prompt]").forEach((button) => {
+    button.addEventListener("click", () => send({ text: button.dataset.chatPrompt }));
+  });
+
   const scroll = () => { log.scrollTop = log.scrollHeight; };
 
   function sourcesHtml(sources) {

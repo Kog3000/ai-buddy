@@ -66,6 +66,8 @@ def create_app(config: type[Config] | None = None) -> Flask:
         db.create_all()
         if app.config["SEED_ON_START"]:
             seed()
+            from .frontend_knowledge import ensure_frontend_knowledge
+            ensure_frontend_knowledge()
         db.session.remove()
         if not app.config.get("TESTING"):
             db.engine.dispose()  # не делим соединения между воркерами gunicorn (--preload)

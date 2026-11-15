@@ -54,9 +54,10 @@ def checklist_page():
 def kb_page():
     _page("kb")
     u = current_user()
+    from .frontend_knowledge import overview
     return render_template("kb.html", active="kb", categories=kb.categories(u),
                            materials=materials.grouped(u) if u.role == "intern" else [],
-                           mentor=u.mentor if u.role == "intern" else None)
+                           mentor=u.mentor if u.role == "intern" else None, frontend=overview(u))
 
 
 @bp.route("/kb/<slug>")
@@ -66,6 +67,13 @@ def kb_category(slug):
     if slug not in cats:
         abort(404)
     return render_template("kb_category.html", active="kb", cat=cats[slug])
+
+
+@bp.route("/kb/frontend/videos")
+@login_required
+def frontend_videos():
+    from .course_videos import catalog, groups
+    return render_template("course_videos.html", active="kb", groups=groups(), total=len(catalog()["lessons"]))
 
 
 @bp.route("/kb/topic/<slug>")
@@ -78,7 +86,11 @@ def kb_topic(slug):
     _page("kb_topic")
     done_slugs = {t["slug"] for c in kb.categories(current_user()) for t in c["topics"] if t["done"]}
     cat = db.session.get(KBCategory, topic.category_id)
-    return render_template("kb_topic.html", active="kb", topic=topic, cat=cat, done=topic.slug in done_slugs)
+    from .course_videos import lessons_for_topic
+    from .frontend_knowledge import editorial_body, is_frontend_topic
+    return render_template("kb_topic.html", active="kb", topic=topic, cat=cat, done=topic.slug in done_slugs,
+                           frontend_topic=is_frontend_topic(topic.slug), videos=lessons_for_topic(topic.slug),
+                           topic_body=editorial_body(topic.slug) or topic.body)
 
 
 @bp.route("/progress")
