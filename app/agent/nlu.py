@@ -9,7 +9,7 @@ from ..textutil import has_any, has_phrase, normalize, parse_dates
 
 INTENTS = ("cancel", "sick", "escalate", "status", "absence", "access", "chats", "meeting", "goal", "next_steps",
            "who_mentor", "who_lead", "schedule", "overview", "prep_1on1", "meeting_requests", "greeting", "thanks",
-           "kb")
+           "find_material", "quiz", "stuck", "kb")
 
 
 @dataclass
@@ -58,6 +58,25 @@ def extract_after_colon(text: str) -> str:
     return text.split(":", 1)[1].strip() if ":" in text else ""
 
 
+def _learning_request(text: str, state: dict) -> Intent | None:
+    t = normalize(text).strip()
+    find = re.match(r"(?:найди|найти|подбери|покажи|ищу)\s+(?:мне\s+)?(?:материал[а-я]*|стать[а-я]*|видео|урок[а-я]*)\b", t)
+    quiz = re.match(r"(?:проверь|проверить|проверка)\s+(?:мои\s+)?знани[а-я]*\b|(?:пройти|начать)\s+(?:тест|самопроверку)\b|протестируй\s+меня\b", t)
+    for name, match in (("find_material", find), ("quiz", quiz)):
+        if match:
+            query = re.sub(r"^\s*(?:(?:по\s+теме|на\s+тему|по|про|о)\b\s*)?[:—-]?\s*", "", text[match.end():], flags=re.I)
+            return Intent(name, {"query": query.strip(" ?!."), "start": True})
+    stuck = re.search(r"\b(?:застрял[аи]?|запутал(?:ся|ась)|ничего\s+не\s+понял[аи]?|"
+                      r"(?:нифига|ничего)\s+не\s+(?:ясно|понял[аи]?)|непонятно|не\s+ясно|не\s+получается|(?:вообще\s+)?не\s+понимаю|"
+                      r"не\s+знаю,?\s+с\s+чего\s+начать|вс[её]\s+ещ[её]\s+непонятно)\b", t)
+    if stuck:
+        query = re.sub(r"^\s*(?:(?:в\s+теме|с\s+темой|по\s+теме|со|в|с|по|про)\b\s*)?[:—-]?\s*", "", text[stuck.end():], flags=re.I)
+        query = query.strip(" ?!.")
+        continuing = state.get("flow") == "stuck"
+        return Intent("stuck", {"query": query, "start": not continuing, "repeat": continuing and not query})
+    return None
+
+
 def detect(text: str, state: dict | None = None, staff: bool = False) -> Intent:
     state = state or {}
     flow = state.get("flow")
@@ -89,6 +108,9 @@ def detect(text: str, state: dict | None = None, staff: bool = False) -> Intent:
     if has_phrase(t, ["спроси наставника", "спросить наставника", "передай наставнику", "вопрос наставнику",
                       "передать наставнику", "спроси у наставника"]):
         return Intent("escalate", {"question": extract_after_colon(text)})
+    learning = _learning_request(text, state)
+    if learning:
+        return learning
     if has_phrase(t, ["мои заявки", "статус заяв", "статус доступ", "что с заявк", "что с доступ",
                       "одобрили ли", "статус моих"]):
         return Intent("status")
@@ -109,6 +131,8 @@ def detect(text: str, state: dict | None = None, staff: bool = False) -> Intent:
         return Intent("meeting")
     if has_any(t, ["цел", "трекер"]) and has_any(t, ["добав", "запиш", "заполн", "внес", "постав"]):
         return Intent("goal", {"title": extract_after_colon(text)})
+    if flow == "quiz" and state.get("stage") == "feedback" and t in {"дальше", "следующий вопрос"}:
+        return Intent("quiz")
     if has_phrase(t, ["что дальше", "следующ", "что делать", "что мне делать", "мой прогресс", "мои задачи",
                       "чек-лист", "чеклист", "на какой я неделе", "какая у меня неделя", "какой этап", "на каком я этапе", "план адаптации"]):
         return Intent("next_steps")
@@ -123,6 +147,8 @@ def detect(text: str, state: dict | None = None, staff: bool = False) -> Intent:
         return Intent("greeting")
     if re.fullmatch(r"(спасибо|спс|благодарю|супер|отлично|понятно|ок|окей)[!. ]*", t):
         return Intent("thanks")
+    if flow in {"find_material", "quiz", "stuck"}:
+        return Intent(flow, {"query": text.strip()} if flow == "find_material" or state.get("stage") == "topic" else {})
     return Intent("kb")
 
 
@@ -156,6 +182,8 @@ def categorize(text: str, intent: str = "kb") -> str:
         return "org"
     if intent == "goal":
         return "growth"
+    if intent in {"find_material", "quiz"}:
+        return "professional"
     if intent in {"greeting", "thanks", "cancel", "overview", "prep_1on1"}:
         return "other"
     for category, stems in _CAT_WORDS:
