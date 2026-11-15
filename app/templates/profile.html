@@ -5,7 +5,7 @@
 <section class="profile-head">
   <div class="big-ava">{{ me.initials }}</div>
   <div class="profile-info">
-    <h2><span class="profile-name">{{ me.full_name }}</span> <button class="name-edit" data-open-profile aria-label="Редактировать профиль" title="Редактировать профиль">{{ icon('pencil', 24) }}</button></h2>
+    <div class="profile-name-edit"><h2><span class="profile-name">{{ me.full_name }}</span> <button class="name-edit" data-open-profile aria-label="Редактировать профиль" title="Редактировать профиль">{{ icon('pencil', 24) }}</button></h2></div>
     <div class="contacts"><span>{{ me.phone or 'Телефон не указан' }}</span><span>{{ me.email }}</span></div>
     <span class="team-pill">{{ me.team }}</span>
   </div>
