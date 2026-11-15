@@ -534,6 +534,7 @@ svg {
   background: var(--card);
   border-radius: 22.5px;
   padding: 21px 24px;
+  margin-bottom: 30px;
 }
 
 .grid2 {
@@ -3174,6 +3175,9 @@ svg {
   .profile-head {
     flex-wrap: wrap;
     gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .big-ava {
@@ -3204,6 +3208,9 @@ svg {
   .logout-btn {
     width: 46px;
     height: 46px;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .ptable {
