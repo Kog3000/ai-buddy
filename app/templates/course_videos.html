@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Видеотека AvitoTech{% endblock %}
+{% block heading %}Видеотека AvitoTech{% endblock %}
+{% block content %}
+<div class="crumbs"><a href="/kb">База знаний</a> / <a href="/kb/frontend">Фронтенд-подборка</a> / Видео</div>
+<p>{{ total }} уроков: JavaScript и три сезона «Паттернов и практик». Выбери удобную площадку для просмотра.</p>
+<p class="muted small">Описания и ссылки собраны со страниц курсов. Это описания уроков, не расшифровки видео. Доступность ролика зависит от площадки.</p>
+<div class="video-platforms video-navigation" aria-label="Разделы видеотеки">
+{% for group in groups %}<a class="btn light" href="#group-{{ loop.index }}">{{ group.title }}</a>{% endfor %}
+</div>
+{% for group in groups %}
+<section aria-labelledby="group-{{ loop.index }}">
+  <div class="section-head"><h2 class="section-title" id="group-{{ loop.index }}">{{ group.title }}</h2><span class="muted small">{{ group.lessons|length }} уроков</span></div>
+  {% with videos=group.lessons %}{% include "_video_lessons.html" %}{% endwith %}
+</section>
+{% endfor %}
+<p class="disclaimer">Источники: <a href="https://avito.tech/education/javascript#watch" target="_blank" rel="noopener noreferrer">курс JavaScript</a> и <a href="https://avito.tech/patterns" target="_blank" rel="noopener noreferrer">«Паттерны и практики»</a>. Данные собраны 15.11.2026.</p>
+{% endblock %}

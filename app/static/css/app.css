@@ -559,6 +559,13 @@ svg {
   margin-top: 16px;
 }
 
+.video-lessons { display: grid; gap: 16px; }
+.video-lesson h3 { font-size: var(--fs-h3); line-height: 1.35; overflow-wrap: anywhere; }
+.video-lesson p { line-height: 1.55; overflow-wrap: anywhere; }
+.video-platforms { display: flex; flex-wrap: wrap; gap: 10px; }
+.video-platforms .btn { white-space: normal; }
+.video-navigation { margin-top: 20px; }
+
 .toast {
   position: fixed;
   bottom: 25.5px;

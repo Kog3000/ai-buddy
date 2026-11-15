@@ -2,11 +2,17 @@
 {% block title %}{{ topic.title }}{% endblock %}
 {% block heading %}{{ topic.title }}{% endblock %}
 {% block content %}
-<div class="crumbs"><a href="/kb">База знаний</a> / <a href="/kb/{{ cat.slug }}">{{ cat.title }}</a> · ~{{ topic.minutes }} мин</div>
-<article class="md">{{ topic.body|md }}</article>
+<div class="crumbs"><a href="/kb">База знаний</a> / <a href="/kb/{{ cat.slug }}">{{ cat.title }}</a> · ~{{ topic.minutes }} мин{% if frontend_topic %} на карточку · видео отдельно{% endif %}</div>
+{% if videos %}
+<div class="section-head first"><h2 class="section-title">Видео к этому разделу</h2><a href="/kb/frontend/videos">Вся видеотека →</a></div>
+<p class="muted small">Темы и описания со страницы курса. Один урок — несколько площадок просмотра.</p>
+{% include "_video_lessons.html" %}
+<div class="section-head"><h2 class="section-title">О разделе и самопроверка</h2></div>
+{% endif %}
+<article class="md">{{ topic_body|md }}</article>
 <div class="topic-actions">
   <button class="btn {{ 'secondary' if done }}" id="topic-done" data-slug="{{ topic.slug }}" data-done="{{ '1' if done else '0' }}">{{ 'Изучено ✓' if done else 'Отметить изученным' }}</button>
   <a class="btn light" href="/chat?q={{ ('Объясни подробнее: ' ~ topic.title)|urlencode }}">Спросить AI-buddy</a>
 </div>
-<p class="disclaimer">Тестовый материал прототипа — не является регламентом Авито.</p>
+<p class="disclaimer">{% if frontend_topic %}Учебная карточка AI-buddy с публичным первоисточником. Аннотация и самопроверка не заменяют оригинальный материал.{% else %}Тестовый материал прототипа — не является регламентом Авито.{% endif %}</p>
 {% endblock %}

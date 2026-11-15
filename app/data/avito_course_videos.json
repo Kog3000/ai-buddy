@@ -1,0 +1,1135 @@
+{
+  "schema_version": 1,
+  "extracted_at": "2026-11-15",
+  "extraction_method": "Извлечение названий, описаний и исходящих ссылок из текстового экспорта страниц AvitoTech. Для JavaScript порядок элементов сопоставлен с номерами уроков; исправлены пробелы и явные опечатки в описаниях.",
+  "link_status": "Ссылки извлечены из страницы курса; доступность воспроизведения на площадках не подтверждена.",
+  "lessons": [
+    {
+      "id": "js-1-1",
+      "course": "javascript",
+      "module": 1,
+      "number": 1,
+      "title": "General. Как устроен современный веб",
+      "description": "Темы урока: Что такое веб и как он устроен; Как происходит обмен данными в вебе; Что такое браузеры, зачем они нужны и как устроены; Процесс работы браузера от получения до отрисовки страницы.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/watch?t=4s&v=MxRo1aIN70U"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/52d79b893d25926d86e3065370dcce3a/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239561"
+        }
+      ]
+    },
+    {
+      "id": "js-1-2",
+      "course": "javascript",
+      "module": 1,
+      "number": 2,
+      "title": "Введение в JavaScript",
+      "description": "Практика: Написание и запуск своего первого скрипта в разных средах исполнения. Определение отличий между средами.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/watch?v=73sYbWxq1UM"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/b9847ad019bddff0ed4147573835583c/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239540"
+        }
+      ]
+    },
+    {
+      "id": "js-2-1",
+      "course": "javascript",
+      "module": 2,
+      "number": 1,
+      "title": "Работа с данными в JavaScript. Часть 1",
+      "description": "Теория: Типы данных и как они влияют на сами данные; Переменные. Объявление и инициализация переменных; Типы данных в JavaScript; Принцип работы оператора typeof.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/QPU8GdQ2DoE?si=UXmTlY1XSqWiOD3-"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/d1da5a25cc60790dc3d84f0619c4dbee/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239542"
+        }
+      ]
+    },
+    {
+      "id": "js-2-2",
+      "course": "javascript",
+      "module": 2,
+      "number": 2,
+      "title": "Работа с данными в JavaScript. Часть 2",
+      "description": "Теория: Стек и куча в памяти программы; Хранение данных в движке V8; Объект примитивных значений Oddball и зачем он нужен.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/08N4XqfeXXg?si=7cMVfud58XjJWpHc"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/d2ee5f2698ac669f65439229ba1080d4/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239544"
+        }
+      ]
+    },
+    {
+      "id": "js-2-3",
+      "course": "javascript",
+      "module": 2,
+      "number": 3,
+      "title": "Работа с данными в JavaScript. Часть 3",
+      "description": "Теория: Стандарт IEEE 754 и хранение чисел в памяти программы; Кодирование чисел в памяти программы; Специальные числа в IEEE 754 и их реализация в JavaScript. Практика: Приведение числа из обычного представления в компьютерное и обратно.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/RFR43fpTARs?si=wqHmV5hcBkqjBd2g"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/95cd8bc597a2c882414ec4aaad74cc61/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239543"
+        }
+      ]
+    },
+    {
+      "id": "js-2-4",
+      "course": "javascript",
+      "module": 2,
+      "number": 4,
+      "title": "Работа с данными в JavaScript. Часть 4",
+      "description": "Теория: Безопасные числа, откуда они взялись и почему так называются; Тип данных BigInt и какие числа он описывает; Основные принципы работы с данными типа BigInt.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/tsPmYfIlu2M?si=jOqoIIzOQT1FA1CL"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/643099eeb02e34c6420b15469218f954/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239558"
+        }
+      ]
+    },
+    {
+      "id": "js-2-5",
+      "course": "javascript",
+      "module": 2,
+      "number": 5,
+      "title": "Работа с данными в JavaScript. Часть 5",
+      "description": "Теория: Объектные обёртки над данными в JavaScript и их предназначение; Область видимости данных в программе и её типы в JavaScript; LexicalEnvironment — концепция лексического окружения; Замыкание: откуда оно появляется и как связано со статической областью видимости.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/63nFa--Yviw?si=Rxe_sWU7ymlf-H16"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/fd86f0d57423bc1afb4d460f03633d24/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239571"
+        }
+      ]
+    },
+    {
+      "id": "js-2-6",
+      "course": "javascript",
+      "module": 2,
+      "number": 6,
+      "title": "Работа с данными в JavaScript. Часть 6",
+      "description": "Теория: Hoisting (поднятие): принцип работы и важность; Способы объявления переменных: var, let и const, и их отличия; Процессы приведения типов данных; Динамическая и слабая типизации и в чём они проявляются.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/t-q-kXwRWkA?si=RnZkgTFyfTAnXYj-"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/6ffe64b1f3b4c1a38d4ab4d206d6aa9c/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239573"
+        }
+      ]
+    },
+    {
+      "id": "js-3-1",
+      "course": "javascript",
+      "module": 3,
+      "number": 1,
+      "title": "Контекст исполнения. Ключевое слово this. Часть 1",
+      "description": "Теория: Контекст исполнения и его связь с лексическим окружением; Виды контекстов исполнения и их отличия; Концепция EnvironmentRecord, назначение и типы; Структура Declarative EnvironmentRecord, Objective EnvironmentRecord, Function EnvironmentRecord и Global EnvironmentRecord.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/GjF5LC5rUYM?si=NY8cLlRLxDWnml8n"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/fb2e970beaefc716e00a0bb046bc600d/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239598"
+        }
+      ]
+    },
+    {
+      "id": "js-3-2",
+      "course": "javascript",
+      "module": 3,
+      "number": 2,
+      "title": "Контекст исполнения. Ключевое слово this. Часть 2",
+      "description": "Теория: Контекст исполнения: как устроен и из чего состоит; Алгоритмы создания различных записей среды: NewDeclarativeEnvironment, NewObjectEnvironment, NewFunctionEnvironment, NewGlobalEnvironment; VariableEnvironment и LexicalEnvironment; this — что это, откуда берётся и каким значением инициализируется.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/-mauHVZJcog?si=3qORmotlvXyis9S2"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/66c587f2e71757d4074b59c33d2ddb15/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239581"
+        }
+      ]
+    },
+    {
+      "id": "js-3-3",
+      "course": "javascript",
+      "module": 3,
+      "number": 3,
+      "title": "Контекст исполнения. Ключевое слово this. Часть 3",
+      "description": "Теория: ThisArgument — что это и какое значение туда попадает в зависимости от контекста исполнения; Методы bind, call, apply для ручного изменения ThisArgument; Особенность стрелочных функций в разрезе привязки ThisArgument.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/AFwnxStBi6g?si=6IWOWlG_lpWoNPjQ"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/5bb27df8bd72387afcacc06b2f4c5aa4/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239608"
+        }
+      ]
+    },
+    {
+      "id": "js-4-1",
+      "course": "javascript",
+      "module": 4,
+      "number": 1,
+      "title": "ООП и прототипное наследование в JavaScript. Часть 1",
+      "description": "Теория: Парадигма ООП; Прототип объекта и реализация парадигмы ООП в JavaScript; Отличие полей __proto__ и .prototype; Цепочка наследования объектов: как устроена и когда заканчивается.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/YnEUgsJE1lY?si=JCv3tei8-iqTH520"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/0983c7d681b169a888ce5dfa70208a1d/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239622"
+        }
+      ]
+    },
+    {
+      "id": "js-4-2",
+      "course": "javascript",
+      "module": 4,
+      "number": 2,
+      "title": "ООП и прототипное наследование в JavaScript. Часть 2",
+      "description": "Теория: Дескриптор свойства объекта; замена прототипа объекта с помощью Object.create(); Антипаттерн Monkey patching и подводные камни.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/UE5Q8xjzlzQ?si=NfpSRKi7NH79aUNW"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/9c1594a1a8daad164854475bce79d3ad/"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239614"
+        }
+      ]
+    },
+    {
+      "id": "js-5-1",
+      "course": "javascript",
+      "module": 5,
+      "number": 1,
+      "title": "Инструменты конструирования объектов. Часть 1",
+      "description": "Теория: Способы конструирования объектов; Функции-конструкторы: как они порождают объекты; Механизм работы оператора new при использовании совместно с функциями-конструкторами.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/mFIwAlABfac?si=L5-BdQxaR04VsPVl"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/e99f96ae484eda3b11f47d1ad1ae395b/?playlist=449730"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239623"
+        }
+      ]
+    },
+    {
+      "id": "js-5-2",
+      "course": "javascript",
+      "module": 5,
+      "number": 2,
+      "title": "Инструменты конструирования объектов. Часть 2",
+      "description": "Теория: Классы в JavaScript; Принцип работы классов; Типы классов и их особенности в JavaScript; Наследование классов.",
+      "source_url": "https://avito.tech/education/javascript#watch",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/fnyHvpNJ_oI?si=wC1dwH6v5UFY2A8a"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/private/99df34cda7d386da12f9d9a74b7abb9c/?p=ew4mm7icZpsO9pE0dXkcMw"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/playlist/-152990965_31/video-152990965_456239624"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-1",
+      "course": "patterns",
+      "season": 1,
+      "number": 1,
+      "title": "Код-ревью и читаемость кода",
+      "description": "Первая тема посвящена важности читаемости кода и опасностям пренебрежения к его оформлению. Рассказываем, что такое код-ревью и как с ним работать, а также разбираем примеры кода, которые сложно читать.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239312"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/YybfRrtjdXE?si=lCIzdwelXoWq_x57"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/7b6560bb4ec7aa8aaf6ada90b0a4e2aa/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-2",
+      "course": "patterns",
+      "season": 1,
+      "number": 2,
+      "title": "Качество кода. От истории к классам.",
+      "description": "О целях и задачах классов, методов и переменных. Заодно немного вспомним историю и то, как развивались императивные программы, разберёмся, почему современные приложения стали такими сложными, а в разработке так много подходов и паттернов.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/-ncCgOlujaQ?si=wp06ikFvdnN44fq2"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239313"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/20d8cce141af56f61bf0379374797886/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-3",
+      "course": "patterns",
+      "season": 1,
+      "number": 3,
+      "title": "Вложенность и комментарии в коде",
+      "description": "Охватываем две больших темы: борьбу с сильной вложенностью кода и минимизацию использования комментариев. Посмотрим на примеры и разберёмся, как сделать код читаемым и понятным.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/T2KS6ozM_lo?si=B2_HHSi5zIR78x_D"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239314"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/0cabf81a3b6f46aaae9864f8a6cc00ed/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-4",
+      "course": "patterns",
+      "season": 1,
+      "number": 4,
+      "title": "Работа с исключениями в коде",
+      "description": "Рассказываем про исключения. Разберемся, когда они нужны, а когда от них стоит отказаться. Также в самом конце подведём итоги и закроем большую тему качества кода, которой были посвящены последние несколько видео.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/zn42cRfWVgU?si=Fme-pAToGHRYgJXL"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239315"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/2c237789866215f1edb87774d23fc105/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-5",
+      "course": "patterns",
+      "season": 1,
+      "number": 5,
+      "title": "Проблемы больших проектов",
+      "description": "Разработка и поддержка проектов, развитие которых длится не менее года. Говорим о том, какие есть особенности в таких долгоживущих системах и как бороться со сложностями возникающие в них.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/Tl2tq_nnQi4?si=dNGZYgGw9WRMjGxt"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239316"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/e5d00f181db09b4eb33d8e35fa19cc79/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-6",
+      "course": "patterns",
+      "season": 1,
+      "number": 6,
+      "title": "MVC, архитектура, проектирование и абстракции",
+      "description": "Рассматриваем самый известный и популярный в разработке паттерн, который реализуется практически во всех проектах — MVC. Затем разбираем разницу между проектированием и архитектурой. А завершаем ролик пониманием работы и воплощением абстракций в коде.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/6Xygkx6VsXc?si=9alIT86wBEvuKdRE"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239317"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/10c6aa1dde01b306c0375611c6eee695/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-7",
+      "course": "patterns",
+      "season": 1,
+      "number": 7,
+      "title": "Проблемы плохих проектов",
+      "description": "В этом видео вы узнаете о проблемах в плохих проектах. Всего их будет семь. Рассматриваем каждый из них подробно и разбираемся, как их «лечить».",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/OwNOYPMdNkc?si=YE1F8sD48GGiZmFX"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239319"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/31b175992c1fef977fa9cafbb7b33d3e/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-8",
+      "course": "patterns",
+      "season": 1,
+      "number": 8,
+      "title": "Подходы при проектировании",
+      "description": "Сравниваем и замечаем разницу диаметрально противоположных подходов при развитии продукта. Два варианта показывают разные точки зрения при проектировании. Стоит понимать, что здесь нет единственно верного решения. Каждое из них жизнеспособно и может быть применено в том или ином проекте. На примере интернет-магазина реализуем страницу оформления заказа.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/d5Tj5tAmYcE?si=8Sc0_zKwjC9_UGxg"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239320"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/1f1ee1646f2abac3237b93db22da0eb7/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-9",
+      "course": "patterns",
+      "season": 1,
+      "number": 9,
+      "title": "Введение в GRASP-шаблоны",
+      "description": "Погружаемся в GRASP-шаблоны и определяем их место в процессе разработки. Также вы узнаете о том, что GRASP-шаблоны реализуются в рамках более общей темы под названием «объектно-ориентированный анализ и проектирование» (ООАП).",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/USWry_o3xAA?si=3JpoC2YAxPn5TeOo"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239321"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/9b5e91f7d1d1b92770e2a2306cab1e51/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-10",
+      "course": "patterns",
+      "season": 1,
+      "number": 10,
+      "title": "Low Coupling",
+      "description": "Рассматриваем Low coupling — слабую связанность — как этот подход экономит время, усилия и уменьшает количество ошибок при модификации проекта.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/guEHShTF1B0?si=kglqai4WuFjwzFXt"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239322"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/fc65b2ed2e19f7eb845324ff9ae3e616/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-11",
+      "course": "patterns",
+      "season": 1,
+      "number": 11,
+      "title": "High Cohesion",
+      "description": "Изучаем High Cohesion — сильное сцепление — как этот подход фокусирует связанность методов для выполнения конкретного поведения компонента (класса).",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/EvJKNRO9qbw?si=BCStlg5bRBRNtnHU"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239323"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/95298c564d6adea519076106560d7b5e/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-1-12",
+      "course": "patterns",
+      "season": 1,
+      "number": 12,
+      "title": "UML-шаблоны",
+      "description": "Это видео всецело посвящено UML. Узнаете для чего он нужен и когда он наилучшим образом пригодится в работе. А также изучаем два его вида — диаграмма классов и последовательности.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/ch23o5fisk8?si=NvLpSmBwnhyoE8nM"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239324"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/9081f38dd2ad02423ac0028deda6ee78/?playlist=885753"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-1",
+      "course": "patterns",
+      "season": 2,
+      "number": 1,
+      "title": "Принцип DRY",
+      "description": "В первой серии сезона рассматриваем принцип DRY, который борется с дубликатами в коде. Знакомимся с плюсами и минусами принципа, разбираем на практике примеры его использования и возможные подводные камни.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239393"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/149Hdpqx3Gc?si=2vVi0hyt5bDJDyHn"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/9a8d056f4e003d8af1f7f4da87579fb7/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-2",
+      "course": "patterns",
+      "season": 2,
+      "number": 2,
+      "title": "Бритва Оккама, KISS, YAGNI, BDUF",
+      "description": "Изучаем четыре принципа: Бритва Оккама, KISS, YAGNI и BDUF. После просмотра видео вы поймёте, зачем использовать каждый из них, и как они упростят работу над проектом.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/R9laOus8dec?si=bkpGX7EPj_TiVhzo"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239394"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/f7ec9d99ed79dd53c225fc30197fea6b/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-3",
+      "course": "patterns",
+      "season": 2,
+      "number": 3,
+      "title": "Закон Деметры, магические числа и другие принципы",
+      "description": "Рассказываем о том, как работают принцип наименьшего удивления, закон Деметры и магические числа. А ещё раскроем, почему стоит избегать преждевременных оптимизаций.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/RFmCFRyfcnE?si=BfEARK1IFS7UkIxp"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239395"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/49a0bfcf9550320ca2ad617e6a647736/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-4",
+      "course": "patterns",
+      "season": 2,
+      "number": 4,
+      "title": "Принцип персональной ответственности (SRP)",
+      "description": "Начинаем погружение в SOLID-принципы. Рассматриваем плюсы и минусы принципа персональной ответственности, варианты его использования и показываем пример на коде учебного проекта.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/Ni5TPdNMwX8?si=aqjuPp0m5JZ48zv2"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239396"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/91e5212fe91c0373ae99cd1b6e8607de/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-5",
+      "course": "patterns",
+      "season": 2,
+      "number": 5,
+      "title": "Принцип открытости/закрытости (OCP)",
+      "description": "Продолжаем объяснять SOLID-принципы, а конкретно — принцип открытости/закрытости. Рассказываем, как принцип открытости/закрытости борется с изменениями в проекте и как с помощью него сконцентрировать задачи классов вокруг сложной бизнес-логики.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/RwlXcBQiWao?si=F7870EYeC3kWwpTK"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239399"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/34d64f0111b08ed9be926147ff8a210a/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-6",
+      "course": "patterns",
+      "season": 2,
+      "number": 6,
+      "title": "Принципы подстановки Лисков и разделения интерфейса (LSP и ISP)",
+      "description": "Рассматриваем сразу два SOLID-принципа за раз — подстановки Лисков и разделения интерфейса. На примерах разбираем их плюсы и минусы и рассказываем, как сделать код ещё более гибким.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/LvEfAahwPTs?si=Xswmi5MS6IAdYaB0"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239400"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/75a67942051e859cc5cde94f2c4de16d/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-7",
+      "course": "patterns",
+      "season": 2,
+      "number": 7,
+      "title": "Принцип инверсии зависимостей (DIP)",
+      "description": "Это видео завершает цикл про SOLID-принципы. Рассматриваем последний из них — принцип инверсии зависимости. Он объединяет в себе изученные ранее четыре принципа и выделяет создание объектов в отдельную абстракцию.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/G8W0CA5742k?si=vr-oMOzDd7-kxcQr"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239401"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/3887e47b9e3abcb824e737bf2095a0c0/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-8",
+      "course": "patterns",
+      "season": 2,
+      "number": 8,
+      "title": "Hollywood Principle, IoC, Service Locator",
+      "description": "Разбираем Dependency Injection и подробно изучаем подходы Hollywood Principle, Inversion of Control и Service Locator. Обсуждаем, как и когда их можно применять, рассматриваем ситуации, когда эти подходы становятся излишними при работе с кодом.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/Kfs_WPzdg0Y?si=m0EmGJBAyoBe_fNr"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239402"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/9103efb459a5168464257b8294bbc4c2/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-9",
+      "course": "patterns",
+      "season": 2,
+      "number": 9,
+      "title": "Dependency Injection",
+      "description": "Говорим о принципе Dependency Injection и четырёх вариантах его реализации: через конструктор, сеттер-методы, интерфейс и свойство. Разбираем, в чём разница между принципами Dependency Injection, Dependency Inversion и Service Locator, и обсуждаем их плюсы и минусы.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/E3xuyPyIyi0?si=AOQfQ5VsbyzCuBUc"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239403"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/d8626964235c24d5f78f58b5e71ac732/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-2-10",
+      "course": "patterns",
+      "season": 2,
+      "number": 10,
+      "title": "DI-Container",
+      "description": "Завершаем второй сезон курса описанием DI-контейнеров: как с ними работать, в чём их плюсы и минусы. А ещё разбираем пример использования DI-контейнеров в нашем открытом проекте на GitHub",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/BxXSsSnMxjw?si=YZ144c-EytuVKk-R"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239404"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/a6a750eb461a1a70605ce21886767cb9/?playlist=282512"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-1",
+      "course": "patterns",
+      "season": 3,
+      "number": 1,
+      "title": "История создания паттернов",
+      "description": "В этом вводном видео знакомимся с разными каталогами паттернов и их отличительными признаками. Поймём, чем принципы отличаются от паттернов, изучаем историю паттернов и методы правильной работы с ними.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239662"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/NTNJUzYvayg"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/8ee0b0bbc789a8f38523f9c8df3d1bf6/?r=wd"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-2",
+      "course": "patterns",
+      "season": 3,
+      "number": 2,
+      "title": "Порождающие паттерны. Builder (Строитель) и Factory Method (Фабричный метод)",
+      "description": "Начинаем изучение порождающей группы паттернов и рассмотрим из них первые два — это Строитель и Фабричный метод. Первый позволяет создавать сложные объекты. Второй выносит операцию инстанцирования в специальные методы.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "VK Видео",
+          "url": "https://vk.com/video-152990965_456239668"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/R3013Y1hTBU?si=-lWtz5mkcTbWZWBy"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/d97c82cc3967256f338072f974d25936/?r=wd"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-3",
+      "course": "patterns",
+      "season": 3,
+      "number": 3,
+      "title": "Порождающие паттерны. Abstract Factory (Абстрактная фабрика)",
+      "description": "Это видео полностью посвящено паттерну Абстрактная фабрика. Она занимается тем, что создаёт взаимозаменяемые группы объектов и позволяет выбирать именно ту, которая подходит в данном конкретном приложении.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/Q48EyQRbgpw?si=Y9z1SKxjdi4vMIbi"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vk.com/video-152990965_456239669"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/2fa845e6cb17bbdeb53587081b3e3147/?r=wd"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-4",
+      "course": "patterns",
+      "season": 3,
+      "number": 4,
+      "title": "Порождающие паттерны. Prototype (Прототип) и Singleton (Одиночка)",
+      "description": "Не будем рассматривать фабричные паттерны, а перейдём к другим вопросам, связанным с процессом порождения. Так, паттерн Прототип позволяет создать клон существующего объекта, без необходимости воспроизведения нужного ему состояния. Второй паттерн — это Одиночка, который снискал славу анти-паттерна. Тем не менее, будет полезно знать как можно сконфигурировать класс, который может иметь один единственный инстанс, при условии, что в ход не идёт рефлексия и чёрная магия.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/tIqn2jEvA9o?si=yyw_dvEHpvGF3XpG"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vk.com/video-152990965_456239670"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/410a729d74c82c454c433b65ffa50b6b/?r=wd"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-5",
+      "course": "patterns",
+      "season": 3,
+      "number": 5,
+      "title": "Структурные паттерны. Adapter (Адаптер) и Composite (Компоновщик)",
+      "description": "Переходим к следующей группе — структурные паттерны. Первый из них — Адаптер, который приводит класс к интерфейсу, который ему изначально не соответствует. Затем рассмотрим Компоновщик. Он в ООП-парадигме позволяет создавать древовидную структуру данных.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/hKoLlBxSQYw"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239672"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/18f3159c6b50972709982dc955bea0fe/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-6",
+      "course": "patterns",
+      "season": 3,
+      "number": 6,
+      "title": "Структурные паттерны. Decorator (Декоратор) и Facade (Фасад)",
+      "description": "Рассматриваем Декоратор, показывающий нам, как реализовывать альтернативный вариант наследованию классов. В отличии от наследования, паттерн имеет ряд существенных плюсов. Второй рассматриваемый паттерн — это Фасад. У него нет своей UML-диаграммы, зато он отлично справляется с организацией точки входа в сложную систему.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/OvBpHBHkduw"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239673"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/fd1e3cf76e5cd9319b0d7f1266768321/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-7",
+      "course": "patterns",
+      "season": 3,
+      "number": 7,
+      "title": "Структурные паттерны. Bridge (Мост), Proxy (Прокси) и Flyweight (Приспособленец)",
+      "description": "В заключительной серии по Структурным паттернам рассматриваем три оставшихся подхода. Первый из них — это Мост. Он позволяет развивать независимо абстракцию и связанную с ней реализацию. Затем изучим Заместителя. Его задача в контроле доступа к некоторому объекту для выполнения дополнительных задач. В конце кратко рассказываем про паттерн Приспособленец.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/crZy-Uw_ySo"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239674"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/e96149483e76539257998e3d28cbdc3b/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-8",
+      "course": "patterns",
+      "season": 3,
+      "number": 8,
+      "title": "Поведенческие паттерны. Strategy (Стратегия) и State (Состояние)",
+      "description": "Изучаем третью, заключительную группу, которая называется Поведенческие паттерны. Начинаем с двух паттернов: Стратегия и Состояние. Они используют композицию для изменения поведения объекта, но делают это по-разному.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/6xuH6yBdJkk"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239679"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/b109bce037e6122c9be9da2580e6ae9a/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-9",
+      "course": "patterns",
+      "season": 3,
+      "number": 9,
+      "title": "Поведенческие паттерны. Command (Команда) и Mediator (Посредник)",
+      "description": "Продолжаем изучать Поведенческие паттерны, рассматриваем Команду и Посредника. Первый из них относится к коду, как к транзакции, в которой строго выполняются все описанные действия. Благодаря такой архитектуре и инкапсуляции кода можно добавить к системе множество дополнительных действий. Например, логирование или отмену последних операций. Второй паттерн — брат паттерна Фасад, но вместо внешнего взаимодействия он обеспечивает связь между объектами конкретной системы.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/b6_kxhIf3ZQ"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239678"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/e9ae028730e1289cf7fe1d60de787c39/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-10",
+      "course": "patterns",
+      "season": 3,
+      "number": 10,
+      "title": "Поведенческие паттерны. Observer (Наблюдатель) и Chain Of Responsibility (Цепочка обязанностей)",
+      "description": "Рассматриваем Наблюдателя и Цепочку обязанностей. Они оба связаны с отправкой и обработкой событий, но делают это по-разному. В паттерне Наблюдатель субъект создаёт сообщение и отправляет его всем своим подписчикам. Его задача в уведомлении всех слушателей о необходимости отреагировать на изменения. Связь между субъектом и наблюдателями определяется как «один ко многим». Что же касается Цепочки Обязанностей, то в нём формируется цепочка из объектов-обработчиков. Сначала событие отправляется первому объекту и, если он не смог его обработать, то происходит передача следующему. И так — пока не будет пройдена вся цепочка.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/1efABX5aXD0"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239677"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/9ed71662e2881257ac397da78274360f/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-11",
+      "course": "patterns",
+      "season": 3,
+      "number": 11,
+      "title": "Поведенческие паттерны. Memento (Хранитель) и Template Method (Шаблонный метод)",
+      "description": "Изучаем ещё два Поведенческих паттерна и заканчиваем с этой группой. Первый из них — Хранитель. Он сохраняет историю изменений состояния объекта, а также может восстанавливать любое из них. Второй рассматриваемый паттерн — Шаблонный метод. Он объясняет, как создавать из классов шаблоны с алгоритмами для того, чтобы их было просто расширять наследниками. Используя его, вы сильно повышаете гибкость сущности и её возможности. Также он позволяет хорошо повышать вариативность расширяющих классов.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/0iC_k_ByY_g"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239676"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/7c6d62a459222695ac7779c9f96791d3/"
+        }
+      ]
+    },
+    {
+      "id": "patterns-3-12",
+      "course": "patterns",
+      "season": 3,
+      "number": 12,
+      "title": "История паттернов и правила в их основе",
+      "description": "В этом заключительном видео мы отходим от практики и обсуждаем на две важные темы. Начинаем с истоков возникновения паттернов, а затем говорим о том, как урбанизм и проектирование городов помогли в создании книги «Паттерны проектирования». А еще — знакомимся с Кристофером Александром. В самом конце погружаемся в два фундаментальных правила, описанных в книге Design Patterns. Они входят в число ключевых подходов, на основе которых строятся многие паттерны, о которых мы рассказывали во всех предыдущих видео.",
+      "source_url": "https://avito.tech/patterns",
+      "platforms": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/kTZEi1wHC_A"
+        },
+        {
+          "name": "VK Видео",
+          "url": "https://vkvideo.ru/video-152990965_456239675"
+        },
+        {
+          "name": "RuTube",
+          "url": "https://rutube.ru/video/2a56c93c7d57a1c5e09fe9855c5b431b/"
+        }
+      ]
+    }
+  ]
+}

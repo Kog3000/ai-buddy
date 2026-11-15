@@ -3,6 +3,7 @@
 {% block heading %}{{ cat.title }}{% endblock %}
 {% block content %}
 <div class="crumbs"><a href="/kb">База знаний</a> / {{ cat.title }} · изучено {{ cat.done }} из {{ cat.count }}</div>
+{% if cat.slug == 'frontend' %}<p class="page-lead">5 модулей JavaScript, 5 тем по качеству кода и 2 подборки GitHub. Время на карточках не включает просмотр видео.</p><p><a class="btn light" href="/kb/frontend/videos">Видеотека AvitoTech · 49 уроков →</a></p>{% endif %}
 <div class="topic-list">
   {% for t in cat.topics %}
   <a class="topic-row {{ 'done' if t.done }}" href="/kb/topic/{{ t.slug }}">
