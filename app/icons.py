@@ -12,7 +12,7 @@ from pathlib import Path
 from markupsafe import Markup
 
 ICONS_DIR = Path(__file__).parent / "static" / "icons"
-NEUTRAL = re.compile(r'(stroke|fill)="(black|#000000|#5B5B5B|#8C8C8C|#9E1203|white)"', re.IGNORECASE)
+NEUTRAL = re.compile(r'(stroke|fill)="(black|#000000|#5B5B5B|#8C8C8C|white)"', re.IGNORECASE)
 
 
 @lru_cache(maxsize=64)
