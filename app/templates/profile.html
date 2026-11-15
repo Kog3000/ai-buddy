@@ -5,7 +5,7 @@
 <section class="profile-head">
   <div class="big-ava">{{ me.initials }}</div>
   <div class="profile-info">
-    <h2>{{ me.full_name }} <button class="name-edit" data-open-profile aria-label="Редактировать профиль" title="Редактировать профиль">{{ icon('pencil', 24) }}</button></h2>
+    <h2><span class="profile-name">{{ me.full_name }}</span> <button class="name-edit" data-open-profile aria-label="Редактировать профиль" title="Редактировать профиль">{{ icon('pencil', 24) }}</button></h2>
     <div class="contacts"><span>{{ me.phone or 'Телефон не указан' }}</span><span>{{ me.email }}</span></div>
     <span class="team-pill">{{ me.team }}</span>
   </div>
@@ -19,7 +19,7 @@
   <tr><td>Роль</td><td>{{ me.position }}{% if me.role != 'intern' %} · {{ me.role_label }}{% endif %}</td></tr>
   {% if me.start_date %}<tr><td>Дата начала стажировки</td><td>{{ me.start_date.strftime('%d.%m.%Y') }}</td></tr>{% endif %}
   {% if me.end_date %}<tr><td>Дата окончания стажировки</td><td>{{ me.end_date.strftime('%d.%m.%Y') }}</td></tr>{% endif %}
-  {% if me.mentor %}<tr><td>Наставник</td><td><a href="/mentor" class="mentor-link"><span class="dot-ava"></span>{{ me.mentor.full_name }} {{ icon('chev-right', 22) }}</a></td></tr>{% endif %}
+  {% if me.mentor %}<tr><td>Наставник</td><td><a href="/mentor" class="mentor-link"><span class="dot-ava"></span><span>{{ me.mentor.full_name }}</span> {{ icon('chev-right', 22) }}</a></td></tr>{% endif %}
   {% if me.lead and me.role == 'intern' %}<tr><td>Руководитель</td><td>{{ me.lead.full_name }}</td></tr>{% endif %}
 </table>
 
