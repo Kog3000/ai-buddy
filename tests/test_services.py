@@ -155,7 +155,7 @@ def test_access_policy_auto_approve_and_base_checklist(arina):
 
 def test_access_owner_approver_and_limits(arina):
     req = access.create_request(arina, "stash", "edit", "Код команды")
-    assert req.approver.login == "maria"  # владелец проекта
+    assert req.approver.login == "maria"  # руководитель стажёра
     assert access.request_card(req)["title"].startswith("Заявка №A-")
     with pytest.raises(PermissionDenied):
         access.validate(arina, "stash", "admin")  # администрирование — только владельцу

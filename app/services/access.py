@@ -1,7 +1,7 @@
 """Имитация корпоративного сервиса заявок на доступ.
 
 Жизненный цикл: pending_approval → granted | rejected; pending_approval → cancelled (стажёром).
-Согласующий зависит от ресурса: политика (автоматически) или владелец проекта.
+Согласующий зависит от ресурса: политика (автоматически) или руководитель команды запрашивающего.
 Стажёр получает те же доступы, что и остальные участники команды (ограничение — по ресурсу, а не по статусу стажёра).
 """
 from __future__ import annotations
@@ -66,8 +66,14 @@ def recommended_level(user: User, res: Resource) -> str | None:
 def _approver(user: User, res: Resource) -> tuple[User | None, str]:
     if res.approver_rule == "policy":
         return None, "Автоматически по политике доступа"
-    owner = res.owner or user.lead
-    return owner, f"{owner.full_name}, владелец проекта" if owner else "Владелец проекта"
+    # Согласует руководитель команды того, кто запрашивает доступ (так написано и в базе знаний).
+    # Владелец ресурса — запасной вариант, если руководитель не назначен.
+    if user.lead and user.lead.active and user.lead_id != user.id:
+        return user.lead, f"{user.lead.full_name}, руководитель"
+    if res.owner and res.owner.active and res.owner_id != user.id:
+        return res.owner, f"{res.owner.full_name}, владелец проекта"
+    raise PermissionDenied(f"Некому согласовать доступ «{res.name}»: у вас не назначен руководитель. "
+                           "Попросите куратора закрепить руководителя в профиле.")
 
 
 def _event(req: AccessRequest, status: str, actor: str, note: str = "") -> None:
@@ -154,8 +160,9 @@ def sync(user: User | None = None) -> int:
     """Имитация обработки заявок сервисом: политика одобряет заявки через заданную задержку."""
     delay = current_app.config["ACCESS_AUTO_APPROVE_SECONDS"]
     threshold = now() - timedelta(seconds=delay)
-    query = AccessRequest.query.filter(AccessRequest.status == "pending_approval",
+    query = AccessRequest.query.join(Resource).filter(AccessRequest.status == "pending_approval",
                                        AccessRequest.approver_id.is_(None),
+                                       Resource.approver_rule == "policy",
                                        AccessRequest.created_at <= threshold)
     if user is not None:
         query = query.filter(AccessRequest.user_id == user.id)

@@ -372,8 +372,12 @@ class Agent(LearningMixin):
         if confidential:
             note += ("Это конфиденциальные данные: доступ выдаётся, если их требует задача. Укажи в обосновании, "
                      "для какой задачи они нужны. ")
-        approver = ("Автоматически по политике" if resource.approver_rule == "policy"
-                    else access_svc._approver(self.user, resource)[1])
+        try:
+            approver = ("Автоматически по политике" if resource.approver_rule == "policy"
+                        else access_svc._approver(self.user, resource)[1])
+        except PermissionDenied as e:
+            _set_state(self.user, None)
+            return Reply(str(e), suggestions=["Передать наставнику", "Что дальше?"])
         _set_state(self.user, {"flow": "access", "stage": "confirm", "resource": res["code"]})
         card = {"type": "confirm", "title": f"Заявка на доступ: {res['name']}",
                 "rows": [["Ресурс", res["name"]], ["Согласующий", approver]],
