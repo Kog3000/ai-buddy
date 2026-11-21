@@ -896,6 +896,7 @@ svg {
 
 .hero-img {
   height: 250px;
+  width: auto;
   margin-top: -20px;
 }
 

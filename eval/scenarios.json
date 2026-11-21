@@ -1,0 +1,12 @@
+[
+  {"id":"s01","name":"Ответ со ссылкой на документ","messages":["Где хранятся документы нашей команды?"],"expect":{"meta":{"source":"kb"},"source":"faq-documents-storage"}},
+  {"id":"s02","name":"Нет ответа — предложение наставника","messages":["Сколько стоит обед в столовой?"],"expect":{"meta":{"source":"not_found"},"action":"escalate_confirm","no_mentor_created":true}},
+  {"id":"s03","name":"Материал наставника недоступен стажёру","messages":["Шкала оценки стажёров"],"expect":{"inaccessible_slug":"mentor-intern-assessment","forbidden_source":"mentor-intern-assessment"}},
+  {"id":"s04","name":"Карточка доступа без отправки","messages":["Нужен доступ к Jira"],"expect":{"action":"access_confirm","no_access_created":true}},
+  {"id":"s05","name":"Запрещённый ресурс","messages":["Нужен доступ к продовой бд"],"expect":{"meta":{"denied":true},"no_access_created":true}},
+  {"id":"s06","name":"Самопроверка с разбором ответа","messages":["Проверь мои знания","замыкания","2"],"expect":{"text_contains":"Верно","state_flow":"quiz"}},
+  {"id":"s07","name":"Уточнение при затруднении","messages":["Нифига не ясно"],"expect":{"state_flow":"stuck","text_contains":"учебной темой","no_mentor_created":true}},
+  {"id":"s08","name":"Поиск учебного материала","messages":["Найди материал по теме замыкания"],"expect":{"meta":{"source":"material_search"},"source":"fe-js-data"}},
+  {"id":"s09","name":"Неизвестная тема теста не подменяется","messages":["Проверь мои знания","квантовая гравитация"],"expect":{"text_contains":"Пока нет","state_flow":"quiz"}},
+  {"id":"s10","name":"Отмена незавершённого диалога","messages":["Проверь мои знания","Отмена"],"expect":{"state_empty":true,"no_access_created":true,"no_mentor_created":true}}
+]

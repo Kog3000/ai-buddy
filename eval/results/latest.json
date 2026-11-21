@@ -1,0 +1,904 @@
+{
+  "metadata": {
+    "commit": "5373d88e4895c3e34eaccbb0051081728e31b576",
+    "working_tree_changes": true,
+    "dataset_sha256": {
+      "retrieval.json": "5c9cef8995f6155cccad1dc9d4a41d313c195f05e7874b494e48e2b23acd88c0",
+      "scenarios.json": "4c074b47537d7acd0116d5aee1e4dc0b055180e69ed95f7486ce7fc6a3ab4055"
+    },
+    "demo_date": "2026-11-16",
+    "login": "arina",
+    "llm": "offline",
+    "database": "isolated SQLite in memory"
+  },
+  "summary": {
+    "retrieval_total": 42,
+    "top1": 38,
+    "top3": 40,
+    "scenarios_total": 10,
+    "scenarios_passed": 10
+  },
+  "retrieval": [
+    {
+      "id": "r01",
+      "query": "Где хранятся документы нашей команды?",
+      "expected": [
+        "faq-documents-storage"
+      ],
+      "actual": [
+        "faq-documents-storage",
+        "docs-templates",
+        "sec-secrets"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        25.462,
+        5.276,
+        3.66
+      ]
+    },
+    {
+      "id": "r02",
+      "query": "Как запросить доступ к сервису?",
+      "expected": [
+        "access-how-to-request"
+      ],
+      "actual": [
+        "access-how-to-request",
+        "sec-confidential",
+        "access-base-services"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        19.433,
+        13.437,
+        9.574
+      ]
+    },
+    {
+      "id": "r03",
+      "query": "Как подключиться к VPN из дома?",
+      "expected": [
+        "access-vpn"
+      ],
+      "actual": [
+        "life-remote",
+        "access-vpn",
+        "access-base-services"
+      ],
+      "top1": false,
+      "top3": true,
+      "scores": [
+        6.399,
+        5.675,
+        4.55
+      ]
+    },
+    {
+      "id": "r04",
+      "query": "Где найти репозитории команды в Stash?",
+      "expected": [
+        "access-stash"
+      ],
+      "actual": [
+        "access-stash",
+        "access-base-services",
+        "learn-local-setup"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        20.148,
+        12.047,
+        9.066
+      ]
+    },
+    {
+      "id": "r05",
+      "query": "Как устроена доска задач в Jira?",
+      "expected": [
+        "access-jira"
+      ],
+      "actual": [
+        "access-jira",
+        "access-how-to-request",
+        "proc-definition-of-done"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        25.708,
+        7.052,
+        6.928
+      ]
+    },
+    {
+      "id": "r06",
+      "query": "Чем отличаются чтение и редактирование в правах доступа?",
+      "expected": [
+        "access-levels"
+      ],
+      "actual": [
+        "access-how-to-request",
+        "access-levels",
+        "access-stash"
+      ],
+      "top1": false,
+      "top3": true,
+      "scores": [
+        20.796,
+        19.304,
+        7.501
+      ]
+    },
+    {
+      "id": "r07",
+      "query": "Как работает единый вход SSO?",
+      "expected": [
+        "access-sso"
+      ],
+      "actual": [
+        "access-sso",
+        "learn-mentoring",
+        "docs-confluence"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        27.991,
+        3.65,
+        3.609
+      ]
+    },
+    {
+      "id": "r08",
+      "query": "Заявку согласовали, но доступ не работает. Что проверить?",
+      "expected": [
+        "access-troubleshooting"
+      ],
+      "actual": [
+        "access-troubleshooting",
+        "access-how-to-request",
+        "faq-equipment"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        12.123,
+        7.773,
+        5.934
+      ]
+    },
+    {
+      "id": "r09",
+      "query": "Как устроен спринт в нашей команде?",
+      "expected": [
+        "proc-sprint"
+      ],
+      "actual": [
+        "proc-sprint",
+        "product-overview",
+        "proc-tech-debt"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        25.227,
+        4.23,
+        4.095
+      ]
+    },
+    {
+      "id": "r10",
+      "query": "Сколько аппрувов нужно для merge request?",
+      "expected": [
+        "proc-code-review"
+      ],
+      "actual": [
+        "proc-code-review",
+        "access-stash"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        13.961,
+        4.67
+      ]
+    },
+    {
+      "id": "r11",
+      "query": "Как называть ветки и оформлять коммиты?",
+      "expected": [
+        "proc-git-flow"
+      ],
+      "actual": [
+        "proc-git-flow",
+        "faq-vacation",
+        "faq-sick"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        27.709,
+        3.566,
+        3.566
+      ]
+    },
+    {
+      "id": "r12",
+      "query": "Как выпустить изменения в продакшен?",
+      "expected": [
+        "proc-release"
+      ],
+      "actual": [
+        "access-levels",
+        "product-ab",
+        "fe-js-prototypes"
+      ],
+      "top1": false,
+      "top3": false,
+      "scores": [
+        3.097,
+        2.76,
+        1.071
+      ]
+    },
+    {
+      "id": "r13",
+      "query": "Когда задачу можно считать готовой?",
+      "expected": [
+        "proc-definition-of-done"
+      ],
+      "actual": [
+        "proc-definition-of-done",
+        "proc-task-clarify",
+        "access-jira"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        18.373,
+        16.787,
+        3.479
+      ]
+    },
+    {
+      "id": "r14",
+      "query": "Может ли стажёр дежурить один?",
+      "expected": [
+        "proc-oncall"
+      ],
+      "actual": [
+        "proc-oncall",
+        "faq-salary-day",
+        "learn-intro-course"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        12.148,
+        3.531,
+        3.477
+      ]
+    },
+    {
+      "id": "r15",
+      "query": "Как у нас разбирают инциденты?",
+      "expected": [
+        "proc-incidents"
+      ],
+      "actual": [
+        "proc-incidents",
+        "proc-oncall",
+        "fe-practice-solid"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        7.724,
+        6.959,
+        2.471
+      ]
+    },
+    {
+      "id": "r16",
+      "query": "Не понимаю формулировку задачи и её приоритет. К кому идти?",
+      "expected": [
+        "proc-task-clarify"
+      ],
+      "actual": [
+        "proc-task-clarify",
+        "faq-who-to-ask",
+        "proc-planning"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        22.4,
+        7.468,
+        7.136
+      ]
+    },
+    {
+      "id": "r17",
+      "query": "Как команда оценивает сложность задач?",
+      "expected": [
+        "proc-planning"
+      ],
+      "actual": [
+        "proc-planning",
+        "access-jira",
+        "proc-task-clarify"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        7.935,
+        5.659,
+        5.397
+      ]
+    },
+    {
+      "id": "r18",
+      "query": "Где фиксировать технический долг?",
+      "expected": [
+        "proc-tech-debt"
+      ],
+      "actual": [
+        "access-troubleshooting",
+        "docs-adr",
+        "growth-matrix"
+      ],
+      "top1": false,
+      "top3": false,
+      "scores": [
+        5.284,
+        3.93,
+        3.339
+      ]
+    },
+    {
+      "id": "r19",
+      "query": "Как обновить документацию после изменения кода?",
+      "expected": [
+        "proc-docs-update"
+      ],
+      "actual": [
+        "proc-docs-update",
+        "fe-practice-review",
+        "docs-confluence"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        12.587,
+        5.147,
+        3.872
+      ]
+    },
+    {
+      "id": "r20",
+      "query": "Какой фронтенд стек использует команда?",
+      "expected": [
+        "learn-frontend-stack"
+      ],
+      "actual": [
+        "learn-frontend-stack",
+        "team-structure",
+        "fe-github-principles"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        28.746,
+        4.167,
+        3.3
+      ]
+    },
+    {
+      "id": "r21",
+      "query": "Где брать компоненты дизайн системы?",
+      "expected": [
+        "learn-design-system"
+      ],
+      "actual": [
+        "learn-design-system",
+        "learn-testing",
+        "team-neighbours"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        24.993,
+        15.545,
+        8.503
+      ]
+    },
+    {
+      "id": "r22",
+      "query": "Чем писать тесты фронтенда?",
+      "expected": [
+        "learn-testing"
+      ],
+      "actual": [
+        "learn-testing",
+        "product-ab",
+        "docs-architecture"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        10.425,
+        3.8,
+        3.45
+      ]
+    },
+    {
+      "id": "r23",
+      "query": "Как развернуть проект локально?",
+      "expected": [
+        "learn-local-setup"
+      ],
+      "actual": [
+        "learn-local-setup",
+        "access-how-to-request",
+        "access-stash"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        37.476,
+        3.225,
+        2.769
+      ]
+    },
+    {
+      "id": "r24",
+      "query": "За сколько дней нужно попросить отпуск?",
+      "expected": [
+        "faq-vacation"
+      ],
+      "actual": [
+        "faq-vacation",
+        "comm-channels",
+        "access-troubleshooting"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        13.134,
+        3.445,
+        2.769
+      ]
+    },
+    {
+      "id": "r25",
+      "query": "Я заболел. Что нужно сделать?",
+      "expected": [
+        "faq-sick"
+      ],
+      "actual": [
+        "faq-sick",
+        "proc-incidents",
+        "learn-mentoring"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        8.597,
+        3.965,
+        3.642
+      ]
+    },
+    {
+      "id": "r26",
+      "query": "Сломался рабочий ноутбук, куда обратиться?",
+      "expected": [
+        "faq-equipment"
+      ],
+      "actual": [
+        "faq-equipment",
+        "faq-who-to-ask",
+        "team-agreements"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        6.415,
+        4.71,
+        3.688
+      ]
+    },
+    {
+      "id": "r27",
+      "query": "В какие часы команда должна быть на связи?",
+      "expected": [
+        "faq-schedule"
+      ],
+      "actual": [
+        "faq-schedule",
+        "comm-feedback",
+        "fe-github-principles"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        14.082,
+        6.894,
+        3.726
+      ]
+    },
+    {
+      "id": "r28",
+      "query": "Где записывать архитектурные решения ADR?",
+      "expected": [
+        "docs-adr"
+      ],
+      "actual": [
+        "docs-adr",
+        "docs-glossary",
+        "docs-templates"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        27.46,
+        3.321,
+        3.214
+      ]
+    },
+    {
+      "id": "r29",
+      "query": "Где посмотреть документацию API и контракты?",
+      "expected": [
+        "docs-api"
+      ],
+      "actual": [
+        "docs-api",
+        "proc-docs-update",
+        "docs-confluence"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        23.837,
+        4.186,
+        3.872
+      ]
+    },
+    {
+      "id": "r30",
+      "query": "Пришло подозрительное письмо, возможно фишинг. Что делать?",
+      "expected": [
+        "sec-phishing"
+      ],
+      "actual": [
+        "sec-phishing",
+        "access-troubleshooting",
+        "fe-practice-simple"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        22.336,
+        4.237,
+        1.433
+      ]
+    },
+    {
+      "id": "r31",
+      "query": "Можно ли хранить токены и секреты в коде?",
+      "expected": [
+        "sec-secrets"
+      ],
+      "actual": [
+        "sec-secrets",
+        "faq-documents-storage",
+        "tools-ai"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        36.439,
+        5.481,
+        3.537
+      ]
+    },
+    {
+      "id": "r32",
+      "query": "Как подготовить повестку встречи?",
+      "expected": [
+        "comm-meetings"
+      ],
+      "actual": [
+        "comm-meetings",
+        "growth-midterm",
+        "team-rituals"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        13.842,
+        11.397,
+        3.078
+      ]
+    },
+    {
+      "id": "r33",
+      "query": "Как давать обратную связь коллеге?",
+      "expected": [
+        "comm-feedback"
+      ],
+      "actual": [
+        "comm-feedback",
+        "growth-midterm",
+        "comm-calendar"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        12.173,
+        5.576,
+        3.406
+      ]
+    },
+    {
+      "id": "r34",
+      "query": "Как составить индивидуальный план развития?",
+      "expected": [
+        "growth-idp"
+      ],
+      "actual": [
+        "growth-idp",
+        "growth-goals",
+        "product-roadmap"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        27.742,
+        3.816,
+        3.788
+      ]
+    },
+    {
+      "id": "r35",
+      "query": "Что делать, когда падает pipeline CI?",
+      "expected": [
+        "tools-ci"
+      ],
+      "actual": [
+        "tools-ci",
+        "proc-release",
+        "access-troubleshooting"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        5.678,
+        4.783,
+        4.766
+      ]
+    },
+    {
+      "id": "r36",
+      "query": "Как работают очереди событий Kafka?",
+      "expected": [
+        "tools-kafka"
+      ],
+      "actual": [
+        "tools-kafka",
+        "life-events",
+        "product-analytics"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        40.476,
+        5.335,
+        5.276
+      ]
+    },
+    {
+      "id": "r37",
+      "query": "Нужен материал про замыкания и область видимости в JavaScript",
+      "expected": [
+        "fe-js-data"
+      ],
+      "actual": [
+        "fe-js-data",
+        "fe-js-web",
+        "fe-js-objects"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        31.501,
+        5.059,
+        4.958
+      ]
+    },
+    {
+      "id": "r38",
+      "query": "Хочу разобраться с this и контекстом исполнения",
+      "expected": [
+        "fe-js-this"
+      ],
+      "actual": [
+        "fe-js-this",
+        "comm-etiquette",
+        "docs-adr"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        24.126,
+        3.267,
+        3.214
+      ]
+    },
+    {
+      "id": "r39",
+      "query": "Где изучить прототипное наследование JavaScript?",
+      "expected": [
+        "fe-js-prototypes"
+      ],
+      "actual": [
+        "fe-js-prototypes",
+        "fe-js-objects",
+        "fe-js-web"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        23.818,
+        13.528,
+        5.583
+      ]
+    },
+    {
+      "id": "r40",
+      "query": "Как правильно обрабатывать исключения?",
+      "expected": [
+        "fe-practice-errors"
+      ],
+      "actual": [
+        "fe-practice-errors",
+        "faq-sick"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        6.104,
+        4.511
+      ]
+    },
+    {
+      "id": "r41",
+      "query": "Нужны материалы по SOLID и зависимостям",
+      "expected": [
+        "fe-practice-solid"
+      ],
+      "actual": [
+        "fe-practice-solid",
+        "fe-practice-errors",
+        "faq-documents-storage"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        14.226,
+        2.974,
+        2.673
+      ]
+    },
+    {
+      "id": "r42",
+      "query": "Как применять KISS и YAGNI?",
+      "expected": [
+        "fe-practice-simple"
+      ],
+      "actual": [
+        "fe-practice-simple",
+        "fe-practice-solid"
+      ],
+      "top1": true,
+      "top3": true,
+      "scores": [
+        15.404,
+        1.081
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s01",
+      "name": "Ответ со ссылкой на документ",
+      "passed": true,
+      "errors": [],
+      "reply": "**Где хранятся документы команды**\n\nДокументы команды собраны в корпоративной базе знаний:\n- Confluence (пространство FE) — инструкции и документация;\n- общее хранилище команды — рабочие файлы и материалы;\n- база знаний AI-buddy — полезные ссылки и ответы на частые вопросы.\n\nТакже может пригодиться: «Шаблоны документов».",
+      "sources": [
+        "docs-templates",
+        "faq-documents-storage"
+      ]
+    },
+    {
+      "id": "s02",
+      "name": "Нет ответа — предложение наставника",
+      "passed": true,
+      "errors": [],
+      "reply": "В базе знаний нет точного ответа на этот вопрос. Могу передать его наставнику — Иван ответит, а ответ придёт сюда в чат.",
+      "sources": []
+    },
+    {
+      "id": "s03",
+      "name": "Материал наставника недоступен стажёру",
+      "passed": true,
+      "errors": [],
+      "reply": "В базе знаний нет точного ответа на этот вопрос. Могу передать его наставнику — Иван ответит, а ответ придёт сюда в чат.",
+      "sources": []
+    },
+    {
+      "id": "s04",
+      "name": "Карточка доступа без отправки",
+      "passed": true,
+      "errors": [],
+      "reply": "Подготовил заявку — проверь и отправь.",
+      "sources": []
+    },
+    {
+      "id": "s05",
+      "name": "Запрещённый ресурс",
+      "passed": true,
+      "errors": [],
+      "reply": "Доступ к «Продовая БД объявлений» участникам команды не выдаётся — он есть только у дежурных SRE. Если данные нужны для задачи — обсуди с наставником, как получить их другим способом.",
+      "sources": []
+    },
+    {
+      "id": "s06",
+      "name": "Самопроверка с разбором ответа",
+      "passed": true,
+      "errors": [],
+      "reply": "Верно. Функция сохраняет доступ к внешнему лексическому окружению, даже когда внешний вызов завершился.",
+      "sources": [
+        "fe-js-data"
+      ]
+    },
+    {
+      "id": "s07",
+      "name": "Уточнение при затруднении",
+      "passed": true,
+      "errors": [],
+      "reply": "Давай разберёмся. Ты застрял(а) с учебной темой или с рабочей задачей?",
+      "sources": []
+    },
+    {
+      "id": "s08",
+      "name": "Поиск учебного материала",
+      "passed": true,
+      "errors": [],
+      "reply": "Вот материалы по твоей теме:\n- **02. Данные, область видимости и замыкания** — Типы данных, числа, BigInt, области видимости, замыкания, поднятие объявлений и преобразования типов.",
+      "sources": [
+        "fe-js-data"
+      ]
+    },
+    {
+      "id": "s09",
+      "name": "Неизвестная тема теста не подменяется",
+      "passed": true,
+      "errors": [],
+      "reply": "По этой теме пока нет подготовленной проверки. Выбери тему — задам три вопроса с вариантами ответа. Это самопроверка AI-buddy.",
+      "sources": []
+    },
+    {
+      "id": "s10",
+      "name": "Отмена незавершённого диалога",
+      "passed": true,
+      "errors": [],
+      "reply": "Хорошо, отменил. Чем ещё помочь?",
+      "sources": []
+    }
+  ]
+}

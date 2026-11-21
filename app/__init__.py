@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import logging
+from datetime import date
 
+import click
 from flask import Flask, render_template
 
 from .config import Config
@@ -55,6 +57,26 @@ def create_app(config: type[Config] | None = None) -> Flask:
         db.create_all()
         seed()
         print("seeded")
+
+    @app.cli.command("reset-demo")
+    @click.option("--yes", is_flag=True, help="Подтвердить удаление всех данных демонстрационной БД.")
+    @click.option("--date", "demo_date", type=click.DateTime(formats=["%Y-%m-%d"]),
+                  help="Дата демо YYYY-MM-DD; по умолчанию сегодня.")
+    def reset_demo_cmd(yes: bool, demo_date):
+        """Удалить все данные и заново создать демо относительно текущей даты."""
+        if not yes:
+            click.confirm("Удалить ВСЕ данные настроенной БД и восстановить демо?", abort=True)
+        from .frontend_knowledge import ensure_frontend_knowledge
+        from .services import kb
+
+        today = demo_date.date() if demo_date else date.today()
+        db.session.remove()
+        db.drop_all()
+        db.create_all()
+        kb._INDEX.clear()
+        seed(today=today)
+        ensure_frontend_knowledge()
+        click.echo(f"Демо восстановлено на {today.isoformat()}. Арина — на третьем дне стажировки.")
 
     @app.cli.command("cron")
     def cron_cmd():
